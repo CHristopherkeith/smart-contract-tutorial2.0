@@ -18,14 +18,18 @@ EthereumWallet(或Mist)依赖于geth
 geth --datadir=./chaindata/ init ./genesis.json
 geth --datadir=./chaindata/ --rpc --rpcapi db,eth,net,web3,personal,web3
 EthereumWallet --rpc http://127.0.0.1:8545
-### 创建账户
+### 2.2创建账户
 密码：123456789
-### 连接到节点的JavaScript环境的交互窗口
+### 2.3连接到节点的JavaScript环境的交互窗口
 geth attach http://127.0.0.1:8545
 Linux: geth attach ipc:Users/zzs/develop/eth/data-test/geth.ipc
 attach后面的为在Linux环境下geth数据存储目录下的geth.ipc文件
 windows: geth attach ipc:\\.\pipe\geth.ipc
 windows直接运行get attach报错，通过管道指定geth.ipc解决
+### 2.4挖矿
+开始挖矿：miner.start()
+停止挖矿：miner.stop()
+
 
 ## 合约方法说明 
 
