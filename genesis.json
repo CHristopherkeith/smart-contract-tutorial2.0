@@ -1,7 +1,7 @@
 {
   "difficulty" : "0x20000",
   "extraData"  : "",
-  "gasLimit"   : "0x8000000",
+  "gasLimit"   : "0xf00000000",
   "alloc": {},
   "config": {
         "chainId": 15,
