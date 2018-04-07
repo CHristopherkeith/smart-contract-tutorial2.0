@@ -16,7 +16,7 @@ https://ethfans.org/posts/ethereum-development-walkthrough-part-2-truffle-ganach
 ## 四、开发环境
 
 ### 对应两种开发方法，有两种开发环境：
-1.1 windows7 + node v6.10.3 + truffle v4.1.3 + ganache-cli v6.1.0
+1.1 windows7 + node v6.10.3 + truffle v4.1.3 + ganache-cli v6.1.0  
 1.2 windows7 + node v6.10.3 + geth 1.8.2 + Ethereum Wallet 
 
 ## 五、关键步骤及说明
