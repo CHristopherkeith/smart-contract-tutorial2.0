@@ -1,4 +1,4 @@
-# 一、智能合约入门教程2.0
+# 智能合约入门教程2.0
 
 
 ## 二、教程说明
@@ -11,6 +11,7 @@
 
 https://ethfans.org/posts/ethereum-development-walkthrough-part-1-smart-contracts  
 https://ethfans.org/posts/ethereum-development-walkthrough-part-2-truffle-ganache-geth-and-mist  
+https://ethfans.org/posts/ethereum-development-walkthrough-part-3
 
 
 ## 四、开发环境
@@ -21,7 +22,7 @@ https://ethfans.org/posts/ethereum-development-walkthrough-part-2-truffle-ganach
 
 ## 五、关键步骤及说明
 
-### 1.使用Truffle + Ganache开发
+### 1.使用Truffle + Ganache开发（对应合约Wrestling..sol与Wrestling3.sol）
 Truffle: 合约框架    
 Ganache: 测试网络  
 
@@ -43,7 +44,7 @@ web3.eth.account
 ### 1.6其他合约与区块链网络的交互操作
 ......
 
-### 2.使用Truffle + Geth + EthereumWallet(或Mist)开发
+### 2.使用Truffle + Geth + EthereumWallet(或Mist)开发（对应合约Wrestling..sol与Wrestling3.sol）
 Truffle: 合约框架   
 Geth: 搭建本地区块链测试网络  
 EthereumWallet: 以太坊钱包,用于观察，部署合约  
@@ -88,6 +89,8 @@ JSON.stringify(Wrestling.abi)
 
 ### 2.7其他合约与区块链网络的交互操作
 ......
+
+### 3.安全性、限制性以及一些顾虑(对应合约Wrestling4.sol)  
 
 ## 五、合约方法说明 
 
