@@ -97,6 +97,13 @@ JSON.stringify(Wrestling.abi)
 ### 1.1返回合约实例
 Wrestling.deployed().then(inst => { WrestlingInstance = inst })  
 
+### 1.2获取账号
+account0 = web3.eth.accounts[0]  
+account1 = web3.eth.accounts[1]  
+
+### 1.3注册二号玩家
+WrestlingInstance.registerAsAnOpponent({from: account1})
+
 ### 1.2开始角力
 WrestlingInstance.wrestle({from: account0, value: web3.toWei(2, "ether")})  
 WrestlingInstance.wrestle({from: account1, value: web3.toWei(3, "ether")})  
