@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-contract Wrestling4 {
+contract Wrestling7 {
     
     address public wrestler1;
 	address public wrestler2;
@@ -19,7 +19,7 @@ contract Wrestling4 {
 	event EndOfRoundEvent(uint wrestler1Deposit, uint wrestler2Deposit);
 	event EndOfWrestlingEvent(address winner, uint gains);
 
-	function Wrestling4() public {
+	function Wrestling7() public {
 	  wrestler1 = msg.sender;
 	}
 

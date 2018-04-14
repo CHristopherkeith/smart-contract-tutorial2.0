@@ -90,7 +90,7 @@ JSON.stringify(Wrestling.abi)
 ### 2.7其他合约与区块链网络的交互操作
 ......
 
-### 3.安全性、限制性以及一些顾虑(对应合约Wrestling4.sol)  
+### 3.安全性、限制性以及一些顾虑(对应合约Wrestling7.sol)  
 
 ## 五、合约方法说明 
 
@@ -117,4 +117,7 @@ WrestlingInstance.theWinner.call()
 
 ### 1.6提取以太币
 WrestlingInstance.withdraw({from: account1})  
-account1必须为赢家地址，若不是提币会回滚  
+account1必须为赢家地址，若不是提币会回滚 
+
+### 1.7重置合约状态（自己添加的函数，以便一轮结束后能再次开展下一轮）
+WrestlingInstance.clearState({from: account1})  
