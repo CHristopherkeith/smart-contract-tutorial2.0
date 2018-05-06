@@ -143,8 +143,19 @@ WrestlingInstance.clearState({from: account1})
 web3.eth.getBalance(web3.eth.accounts[0])  
 
 ##  七、在nodejs下直接运行合约(对应nodejsEnv文件夹下wrestling.js文件)
+
 此环境下运行合约，原教程里不包含，是我自己为后续合约web化所做的尝试。
-### 1.1把原truffle自动加载的web3，truffle-contract和编译后的合约json文件加载进来
-var Web3 = require('web3');
-var contract = require("truffle-contract");
-var config = require('./build/contracts/wrestling7.json')
+
+### 1.1不使用truffle，需要手动集成web3和truffle-contract
+根目录下 npm init  
+根目录下 npm install truffle-contract  
+根目录下 npm install web3  
+
+### 1.2把原truffle自动加载的web3,contract和编译后的合约json文件加载进来
+var Web3 = require('web3');  
+var contract = require("truffle-contract");  
+var config = require('./build/contracts/wrestling7.json')  
+
+### 1.3运行文件  
+根目录下 node ./nodejsEnv/wrestling.js
+
