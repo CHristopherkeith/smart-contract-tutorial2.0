@@ -83,16 +83,26 @@ truffle migrate --network ourTestNet
 ### 2.7启动truffle控制台（在根目录下，用于合约与区块链网络的交互）
 truffle console --network ourTestNet  
 
-### 2.6查看合约地址和描述
+### 2.8查看合约地址和描述
 Wrestling.address  
 JSON.stringify(Wrestling.abi)  
 
-### 2.7其他合约与区块链网络的交互操作
+### 2.9其他合约与区块链网络的交互操作
 ......
 
 ### 3.安全性、限制性以及一些顾虑(对应合约Wrestling7.sol)  
 
-## 五、合约方法说明 
+### 使用ganache-cli作为测试网络
+ganache-cli -p 7545
+
+### test文件夹下面创建test.js文件（对应Wrestling7.sol）
+
+
+### 运行test
+truffle test --network development  
+
+
+##  六、合约方法说明 
 
 ### 1.1返回合约实例
 Wrestling.deployed().then(inst => { WrestlingInstance = inst })  
@@ -102,9 +112,9 @@ account0 = web3.eth.accounts[0]
 account1 = web3.eth.accounts[1]  
 
 ### 1.3注册二号玩家
-WrestlingInstance.registerAsAnOpponent({from: account1})
+WrestlingInstance.registerAsAnOpponent({from: account1})  
 
-### 1.2开始角力
+### 1.4开始角力
 WrestlingInstance.wrestle({from: account0, value: web3.toWei(2, "ether")})  
 WrestlingInstance.wrestle({from: account1, value: web3.toWei(3, "ether")})  
 // End of the first round  
@@ -112,19 +122,29 @@ WrestlingInstance.wrestle({from: account0, value: web3.toWei(5, "ether")})
 WrestlingInstance.wrestle({from: account1, value: web3.toWei(20, "ether")})  
 // End of the wrestling  
 
-### 1.3玩家地址
+### 1.5玩家地址
 WrestlingInstance.wrestler1.call()  
 WrestlingInstance.wrestler2.call()  
 
-### 1.4游戏是否结束
+### 1.6游戏是否结束
 WrestlingInstance.gameFinished.call()  
 
-### 1.5赢家
+### 1.7赢家
 WrestlingInstance.theWinner.call()  
 
-### 1.6提取以太币
+### 1.8提取以太币
 WrestlingInstance.withdraw({from: account1})  
 account1必须为赢家地址，若不是提币会回滚 
 
-### 1.7重置合约状态（自己添加的函数，以便一轮结束后能再次开展下一轮）
+### 1.9重置合约状态（自己添加的函数，以便一轮结束后能再次开展下一轮）
 WrestlingInstance.clearState({from: account1})  
+
+### 1.10查询余额
+web3.eth.getBalance(web3.eth.accounts[0])  
+
+##  七、在nodejs下直接运行合约(对应nodejsEnv文件夹下wrestling.js文件)
+此环境下运行合约，原教程里不包含，是我自己为后续合约web化所做的尝试。
+### 1.1把原truffle自动加载的web3，truffle-contract和编译后的合约json文件加载进来
+var Web3 = require('web3');
+var contract = require("truffle-contract");
+var config = require('./build/contracts/wrestling7.json')

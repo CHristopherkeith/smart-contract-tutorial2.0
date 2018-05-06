@@ -83,4 +83,9 @@ contract Wrestling7 {
         wrestler2Played = false;
     }
 
+    // 重置二号玩家
+    function resetAnOpponent() public {
+        wrestler2 = address(0);
+    }
+
 }
